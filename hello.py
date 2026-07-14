@@ -1,11 +1,13 @@
-class Dog:
-    def __init__(self, name):
-        self.name = name
+import os
+from dotenv import load_dotenv
 
-    def bark(self):
-        return "Woof!"
-        
-jerry = Dog(name="jerry")
+os.getcwd()  # Get the current working directory
 
-jerry.name
-jerry.bark()
+load_dotenv()# Load environment variables from .env file
+
+# Read from environment
+api_key = os.environ.get('API_KEY')
+database = os.environ.get('DATABASE_NAME')
+
+print(f"Using API key: {api_key}")
+print(f"Using database: {database}")
